@@ -19,7 +19,14 @@ function currentLine(katzDeliline){
   var sentence = "";
   if(katzDeliline.length > 0){
     while (counter < katzDeliline.length){
-      sentence = (counter + 1) + ". " + katzDeliline[counter] + ", ";
+      if(counter < katzDeliline.length - 1){
+        sentence += (counter + 1) + ". " + katzDeliline[counter] + ", ";
+        counter++;
+      }if(counter === katzDeliline.length - 1){
+        sentence += (counter + 1) + ". " + katzDeliline[counter];
+        counter++;
+      }
+    
     }
   }else{
     return "The line is currently empty.";
